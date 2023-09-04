@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCSI</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .form-group{
+            margin: 20px
+        }
+        .form-group input, select{
+            width: 250px;
+            height: 30px;
+            outline: none;
+            font-size: 15px;
+            padding: 0 5px;
+        }
+        .form-group textarea{
+            width: 100%;
+            outline: none;
+            font-size: 15px;
+            padding: 5px 5px;
+            resize: none;
+        }
+        .form-group button{
+            height: 30px;
+            width: 100px;
+            font-weight: 700;
+        }
+        .form-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-container{
+            display: grid; 
+            grid-template-columns: 1fr 1fr;
+        }
+        header{
+            height: 100%; 
+            background-color: #d92b2c;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/msci.png" alt="" style="height: 100%; width: 100%;">
+    </header>
+    <div class="grid-container">
+        <div class="form-container">
+            <div style="margin-top: 25px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <div class="form-group">
+                        <label for="">Fullname <span>*</span></label>
+                        <div>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Position <span>*</span></label>
+                        <div>
+                           <Select>
+                            <option value="">Technical</option>
+                            <option value="">Technical</option>
+                            <option value="">Technical</option>
+                            <option value="">Technical</option>
+                            <option value="">Technical</option>
+                            <option value="">Technical</option>
+                            <option value="">Technical</option>
+                           </Select>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div class="form-group">
+                    <label for="">Company name <span>*</span></label>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Email <span>*</span></label>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr;">
+                <div class="form-group">
+                    <label for="">Contact number <span>*</span></label>
+                    <div>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+                <div style="display: grid; grid-template-columns: 1fr;">
+                    <div class="form-group">
+                        <label for="">Comments</label>
+                        <div>
+                            <textarea name="" rows="8"></textarea>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    
+                    <div>
+                        <button>Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div   class="form-container" style="border:1px solid black;">
+            <h1>slider / advertise</h1>
+        </div>
+    </div>
+    <footer style="border: 1px solid #c0c0c0; padding: 15px; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; MCSI - <label id="currentYear"></label></p>
+    </footer>
+
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+</body>
+</html>
