@@ -58,12 +58,12 @@
 
 .slider {
     display: flex;
-    width: 1800px; /* Total width of all slides (300px * 3 slides) */
+    width: 1200px; /* Total width of all slides (300px * 3 slides) */
     animation: slide 15s linear infinite; /* Adjust the animation duration */
 }
 
 .slide {
-    flex: 0 0 225px; /* Set the width of individual slides */
+    flex: 0 0 200px; /* Set the width of individual slides */
     height: 100%; /* Set the height of individual slides */
     /* background-color: #3498db; Set the background color */
     margin-right: 10px; /* Adjust the margin between slides */
@@ -85,6 +85,10 @@
     100% {
         transform: translateX(0);
     }
+}
+
+@media screen  {
+  
 }
     </style>
   </head>
@@ -175,7 +179,7 @@
           </div>
         </div>
       </div>
-      <div class="form-container" style="border: 1px solid black">
+      <div class="form-container" style="border: 1px solid black; overflow: hidden;">
         <div class="slider-container">
         <div class="slider">
             <div class="slide">
