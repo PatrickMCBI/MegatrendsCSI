@@ -49,6 +49,43 @@
       span {
         color: red;
       }
+
+      .slider-container {
+    overflow: hidden;
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
+}
+
+.slider {
+    display: flex;
+    width: 1800px; /* Total width of all slides (300px * 3 slides) */
+    animation: slide 15s linear infinite; /* Adjust the animation duration */
+}
+
+.slide {
+    flex: 0 0 225px; /* Set the width of individual slides */
+    height: 150px; /* Set the height of individual slides */
+    background-color: #3498db; /* Set the background color */
+    margin-right: 10px; /* Adjust the margin between slides */
+}
+.slide img{
+  width: 100%;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-300px); /* Slide to the left */
+    }
+    66% {
+        transform: translateX(-600px); /* Slide to the left */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
     </style>
   </head>
   <body>
@@ -121,22 +158,46 @@
           </div>
           <div style="display: grid; grid-template-columns: 1fr">
             <div class="form-group">
-              <label for="">Project target <span>*</span></label>
+              <label for="">Product needed <span>*</span></label>
               <div>
                 <textarea name="" rows="8" class="jsProjectTarget"></textarea>
               </div>
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr;">
             <div>
               <button class="jsSubmitBtn">Submit</button>
+            </div>
+            <div style="display: flex;justify-content: end;align-items: flex-end;">
+                <a href="img/MCSI PRODUCTS WITH PROJECTS_2023_0922_Vertical.pdf" download>Donwload Company Profile</a>
             </div>
           </div>
         </div>
       </div>
       <div class="form-container" style="border: 1px solid black">
-        <h1>slider / advertise</h1>
+        <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+              <img src="img/Construction & Joint Sealant.png" alt="">
+            </div>
+            <div class="slide">
+              <img src="img/Fire Stop Solutions INCA.png" alt="">
+            </div>
+            <div class="slide">
+              <img src="img/General Glazing Nurichem.png" alt="">
+            </div>
+            <div class="slide">
+              <img src="img/Structural Silicon Glazing Tremco.png" alt="">
+            </div>
+            <div class="slide">
+              <img src="img/Water Proofing Alchimica.png" alt="">
+            </div>
+            <div class="slide">
+              <img src="img/MCSI.png" alt="">
+            </div>
+        </div>
+    </div>
       </div>
     </div>
     <footer
