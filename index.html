@@ -494,8 +494,11 @@
         if(position.value == "Etc"){
           console.log('show input')
           positionInput.style= "margin-top: 5px; display: block;";
+          positionInput.setAttribute('required', 'required')
         }else{
            positionInput.style= "margin-top: 5px; display: none;";
+          positionInput.removeAttribute('required')
+          
         }
 
       })
@@ -504,8 +507,10 @@
         if(companyName.value == "Etc"){
           console.log('show input')
           companyNameInput.style= "margin-top: 5px; display: block;";
+          companyNameInput.setAttribute('required', 'required')
         }else{
            companyNameInput.style= "margin-top: 5px; display: none;";
+          companyNameInput.removeAttribute('required')
         }
 
       })
