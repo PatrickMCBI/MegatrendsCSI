@@ -214,7 +214,9 @@
                   <option value="Architect">Architect</option>
                   <option value="Consultant">Consultant</option>
                   <option value="CFO">CFO</option>
+                  <option value="Etc">Etc</option>
                 </select>
+                <input type="text" class="jsPostionInput" placeholder="Position name" style="margin-top: 5px; display: none;">
               </div>
             </div>
           </div>
@@ -246,7 +248,10 @@
                   <option value="Motor Shop/Auto Shop">
                     Motor Shop/Auto Shop
                   </option>
+                  <option value="Etc">Etc</option>
+
                 </select>
+                <input type="text" class="jsCompanyClassificationInput" placeholder="classification name" style="margin-top: 5px; display: none;">
               </div>
             </div>
           </div>
@@ -463,6 +468,32 @@
     <script>
       const currentYear = new Date().getFullYear();
       document.getElementById("currentYear").textContent = currentYear;
+
+      const position = document.querySelector(".jsPosition");
+      const companyName = document.querySelector(".jsCompany");
+      const positionInput = document.querySelector('.jsPostionInput');
+      const companyNameInput = document.querySelector('.jsCompanyClassificationInput');
+
+      position.addEventListener('change', () =>{
+        if(position.value == "Etc"){
+          console.log('show input')
+          positionInput.style= "margin-top: 5px; display: block;";
+        }else{
+           positionInput.style= "margin-top: 5px; display: none;";
+        }
+
+      })
+
+      companyName.addEventListener('change', () =>{
+        if(companyName.value == "Etc"){
+          console.log('show input')
+          companyNameInput.style= "margin-top: 5px; display: block;";
+        }else{
+           companyNameInput.style= "margin-top: 5px; display: none;";
+        }
+
+      })
+
       let parentEl = document.querySelector("header");
       const mediaQuery = window.matchMedia("(max-width: 768px)");
 
