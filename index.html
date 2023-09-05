@@ -379,18 +379,34 @@
           const fullname = document.querySelector(".jsFullname");
           const position = document.querySelector(".jsPosition");
           const companyName = document.querySelector(".jsCompany");
-          const companyClassification = document.querySelector(
-            ".jsCompanyClassification"
-          );
+          const companyClassification = document.querySelector(".jsCompanyClassification");
           const contactNumber = document.querySelector(".jsContactNumber");
           const email = document.querySelector(".jsEmail");
           const projectTarget = document.querySelector(".jsProjectTarget");
+          const positionInput = document.querySelector('.jsPostionInput');
+          const companyNameInput = document.querySelector('.jsCompanyClassificationInput');
+          
+          let positionValue = null;
+          let companyClassValue = null;
+
+          if(position.value == "Etc"){
+            positionValue = positionInput.value
+          }else{
+            positionValue = position.value;
+          }
+
+          if(companyClassification.value == "Etc"){
+            companyClassValue = companyNameInput.value;
+          }else{
+            companyClassValue = companyClassification.value;
+          }
+
           // Data to be saved
           const newData = {
             _1Fullname: fullname.value,
-            _2Position: position.value,
+            _2Position: positionValue,
             _3CompanyName: companyName.value,
-            _4ClassificationOfCompany: companyClassification.value,
+            _4ClassificationOfCompany: companyClassValue,
             _5ContactNumber: contactNumber.value,
             _5Email: email.value,
             _6ProjectTarget: projectTarget.value,
@@ -470,7 +486,7 @@
       document.getElementById("currentYear").textContent = currentYear;
 
       const position = document.querySelector(".jsPosition");
-      const companyName = document.querySelector(".jsCompany");
+      const companyName = document.querySelector(".jsCompanyClassification");
       const positionInput = document.querySelector('.jsPostionInput');
       const companyNameInput = document.querySelector('.jsCompanyClassificationInput');
 
