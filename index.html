@@ -53,6 +53,14 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
+      footer{
+        border: 1px solid #c0c0c0;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #fff;
+      }
       .slider-container {
     overflow: hidden;
     width: 100%; /* Adjust the width as needed */
@@ -105,6 +113,9 @@
     }
     .form-container{
       display: block;
+    }
+    footer{
+      position: inherit;;
     }
 }
 
@@ -224,12 +235,7 @@
     </div>
     <footer
       style="
-        border: 1px solid #c0c0c0;
-        padding: 15px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: #fff;
+        
       "
     >
       <p>&copy; MCSI - <label id="currentYear"></label></p>
