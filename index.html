@@ -49,7 +49,10 @@
       span {
         color: red;
       }
-
+      .grid-2clm{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
       .slider-container {
     overflow: hidden;
     width: 100%; /* Adjust the width as needed */
@@ -87,9 +90,24 @@
     }
 }
 
-@media screen  {
-  
+@media screen and (max-width: 768px) {
+    /* CSS rules for mobile devices */
+    .grid-container{
+      display: flex;
+      flex-direction: column-reverse;
+
+    }
+    .grid-2clm{
+      display: block;
+    }
+    .form-group input, select{
+      width: 100%;
+    }
+    .form-container{
+      display: block;
+    }
 }
+
     </style>
   </head>
   <body>
@@ -99,7 +117,7 @@
     <div class="grid-container">
       <div class="form-container">
         <div style="margin-top: 25px">
-          <div style="display: grid; grid-template-columns: 1fr 1fr">
+          <div class="grid-2clm">
             <div class="form-group">
               <label for="">Fullname <span>*</span></label>
               <div>
@@ -124,7 +142,7 @@
               </div>
             </div>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr">
+          <div class="grid-2clm">
             <div class="form-group">
               <label for="">Company name <span>*</span></label>
               <div>
@@ -146,7 +164,7 @@
                 </div>
               </div>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr">
+          <div class="grid-2clm">
             <div class="form-group">
               <label for="">Contact number <span>*</span></label>
               <div>
@@ -160,7 +178,7 @@
                 </div>
               </div>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr">
+          <div class="grid-2clm">
             <div class="form-group">
               <label for="">Product needed <span>*</span></label>
               <div>
@@ -169,7 +187,7 @@
             </div>
           </div>
 
-          <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr;">
+          <div class="form-group grid-2clm">
             <div>
               <button class="jsSubmitBtn">Submit</button>
             </div>
@@ -211,6 +229,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
+        background-color: #fff;
       "
     >
       <p>&copy; MCSI - <label id="currentYear"></label></p>
