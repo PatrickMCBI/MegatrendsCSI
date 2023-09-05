@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MCSI</title>
     <style>
+     
       * {
         box-sizing: border-box;
         margin: 0;
@@ -96,6 +97,48 @@
     100% {
         transform: translateX(0);
     }
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000b5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+}
+
+.loader {
+    border: 4px solid #3498db; /* Loader color */
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.alert {
+  display: block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -236,11 +279,7 @@
     </div>
       </div>
     </div>
-    <footer
-      style="
-        
-      "
-    >
+    <footer>
       <p>&copy; MCSI - <label id="currentYear"></label></p>
     </footer>
 
@@ -305,15 +344,41 @@
           _6ProjectTarget: projectTarget.value,
         };
 
+        let view = `<div class="loader-container">
+                        <div class="loader"></div>
+                    </div>`;
+        let domparse = new DOMParser().parseFromString(view, 'text/html').querySelector('.loader-container');
+        document.body.append(domparse);
+    
+        
         // Push the data to the database
         push(dataRef, newData)
           .then(() => {
             console.log("Data saved successfully.");
+            document.querySelector('.loader-container').remove();
+
+            let alert = `<div class="alert" id="alert">Message Sent!</div>`
+            let domparseAlert = new DOMParser().parseFromString(alert, 'text/html').querySelector('#alert');
+            document.body.append(domparseAlert);
+
+            setTimeout(() => {
+              document.querySelector('#alert').remove();
+            }, 3000); // 3000 milliseconds = 3 seconds
+
           })
           .catch((error) => {
             console.error("Error saving data: ", error);
+            
+            ocument.querySelector('.loader-container').remove();
+            setTimeout(() => {
+              document.querySelector('#alert').remove();
+            }, 3000); // 3000 milliseconds = 3 seconds
           });
       });
+
+      
+
+    
     </script>
 
     <script>
