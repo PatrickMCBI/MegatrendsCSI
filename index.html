@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MCSI</title>
     <style>
-     
       * {
         box-sizing: border-box;
         margin: 0;
@@ -50,11 +49,15 @@
       span {
         color: red;
       }
-      .grid-2clm{
+      .grid-1clm {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .grid-2clm {
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
-      footer{
+      footer {
         border: 1px solid #c0c0c0;
         padding: 15px;
         position: fixed;
@@ -63,138 +66,153 @@
         background-color: #fff;
       }
       .slider-container {
-    overflow: hidden;
-    width: 100%; /* Adjust the width as needed */
-    height: 100%; /* Adjust the height as needed */
-}
+        overflow: hidden;
+        width: 100%; /* Adjust the width as needed */
+        height: 100%; /* Adjust the height as needed */
+      }
 
-.slider {
-    display: flex;
-    width: 1200px; /* Total width of all slides (300px * 3 slides) */
-    animation: slide 15s linear infinite; /* Adjust the animation duration */
-}
+      .slider {
+        display: flex;
+        width: 1200px; /* Total width of all slides (300px * 3 slides) */
+        animation: slide 15s linear infinite; /* Adjust the animation duration */
+      }
 
-.slide {
-    flex: 0 0 200px; /* Set the width of individual slides */
-    height: 100%; /* Set the height of individual slides */
-    /* background-color: #3498db; Set the background color */
-    margin-right: 10px; /* Adjust the margin between slides */
-}
-.slide img{
-  width: 100%;
-}
+      .slide {
+        flex: 0 0 200px; /* Set the width of individual slides */
+        height: 100%; /* Set the height of individual slides */
+        /* background-color: #3498db; Set the background color */
+        margin-right: 10px; /* Adjust the margin between slides */
+      }
+      .slide img {
+        width: 100%;
+      }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    33% {
-        transform: translateX(-300px); /* Slide to the left */
-    }
-    66% {
-        transform: translateX(-600px); /* Slide to the left */
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        33% {
+          transform: translateX(-300px); /* Slide to the left */
+        }
+        66% {
+          transform: translateX(-600px); /* Slide to the left */
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
 
-.loader-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000b5;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-    top: 0;
-}
+      .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000b5;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 10;
+        top: 0;
+      }
 
-.loader {
-    border: 4px solid #3498db; /* Loader color */
-    border-top: 4px solid transparent;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-}
+      .loader {
+        border: 4px solid #3498db; /* Loader color */
+        border-top: 4px solid transparent;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-.alert {
-  display: block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    top: 0;
-}
+      .alert {
+        display: block;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        margin-bottom: 20px;
+        position: fixed;
+        width: 100%;
+        text-align: center;
+        top: 0;
+      }
 
-@media screen and (max-width: 768px) {
-    /* CSS rules for mobile devices */
-    .grid-container{
-      display: flex;
-      flex-direction: column-reverse;
+      .alert-error {
+        display: block;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        margin-bottom: 20px;
+        position: fixed;
+        width: 100%;
+        text-align: center;
+        top: 0;
+      }
 
-    }
-    .grid-2clm{
-      display: block;
-    }
-    .form-group input, select{
-      width: 100%;
-    }
-    .form-container{
-      display: block;
-    }
-    footer{
-      position: inherit;;
-    }
-    header{
-      height: 60px;
-    }
-}
-
+      @media screen and (max-width: 768px) {
+        /* CSS rules for mobile devices */
+        .grid-container {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+        .grid-2clm {
+          display: block;
+        }
+        .grid-1clm {
+          display: block;
+        }
+        .form-group input,
+        select {
+          width: 100%;
+        }
+        .form-container {
+          display: block;
+        }
+        footer {
+          position: inherit;
+        }
+        header {
+          height: 100%;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
-      <img src="img/msci.png" alt="" style="height: 100%; width: 100%" />
     </header>
     <div class="grid-container">
-      <div class="form-container">
+      <div class="form-container jsForm">
         <div style="margin-top: 25px">
           <div class="grid-2clm">
             <div class="form-group">
               <label for="">Fullname <span>*</span></label>
               <div>
-                <input type="text" class="jsFullname" />
+                <input type="text" class="jsFullname" required />
               </div>
             </div>
             <div class="form-group">
               <label for="">Position <span>*</span></label>
               <div>
-                <select class="jsPosition">
+                <select class="jsPosition" required>
+                  <option value="">--</option>
                   <option value="Owner">Owner</option>
                   <option value="Project Manager">Project Manager</option>
-                  <option value="Project Engineer /PIC">Project Engineer /PIC</option>
+                  <option value="Project Engineer /PIC">
+                    Project Engineer /PIC
+                  </option>
                   <option value="QA/QS">QA/QS</option>
                   <option value="Purchasing">Purchasing</option>
                   <option value="Purchasing Manager">Purchasing Manager</option>
                   <option value="Architect">Architect</option>
                   <option value="Consultant">Consultant</option>
                   <option value="CFO">CFO</option>
-
                 </select>
               </div>
             </div>
@@ -203,48 +221,58 @@
             <div class="form-group">
               <label for="">Company name <span>*</span></label>
               <div>
-                <input type="text" class="jsCompany" />
+                <input type="text" class="jsCompany" required />
               </div>
             </div>
             <div class="form-group">
-                <label for="">classification of Company <span>*</span></label>
-                <div>
-                  <select class="jsCompanyClassification">
-                    <option value="Enduser">Enduser</option>
-                    <option value="Hardware">Hardware</option>
-                    <option value="Construction">Construction</option>
-                    <option value="MEPF">MEPF</option>
-                    <option value="Developer">Developer</option>
-                    <option value="Designer">Designer</option>
-                    <option value="Freelance">Freelance</option>
-                    <option value="Trading">Trading</option>
-                    <option value="Waterproofing Contractor">Waterproofing Contractor</option>
-                    <option value="Facade Contractor">Facade Contractor</option>
-                    <option value="Aluminum and Glass">Aluminum and Glass</option>
-                    <option value="Motor Shop/Auto Shop">Motor Shop/Auto Shop</option>
-                  </select>
-                </div>
+              <label for="">classification of Company <span>*</span></label>
+              <div>
+                <select class="jsCompanyClassification" required>
+                  <option value="">--</option>
+                  <option value="Enduser">Enduser</option>
+                  <option value="Hardware">Hardware</option>
+                  <option value="Construction">Construction</option>
+                  <option value="MEPF">MEPF</option>
+                  <option value="Developer">Developer</option>
+                  <option value="Designer">Designer</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Trading">Trading</option>
+                  <option value="Waterproofing Contractor">
+                    Waterproofing Contractor
+                  </option>
+                  <option value="Facade Contractor">Facade Contractor</option>
+                  <option value="Aluminum and Glass">Aluminum and Glass</option>
+                  <option value="Motor Shop/Auto Shop">
+                    Motor Shop/Auto Shop
+                  </option>
+                </select>
               </div>
+            </div>
           </div>
           <div class="grid-2clm">
             <div class="form-group">
               <label for="">Contact number <span>*</span></label>
               <div>
-                <input type="text" class="jsContactNumber"/>
+                <input type="text" class="jsContactNumber" required />
               </div>
             </div>
             <div class="form-group">
-                <label for="">Email <span>*</span></label>
-                <div>
-                  <input type="text" class="jsEmail"/>
-                </div>
+              <label for="">Email <span>*</span></label>
+              <div>
+                <input type="text" class="jsEmail" required />
               </div>
+            </div>
           </div>
-          <div class="grid-2clm">
+          <div class="grid-1clm">
             <div class="form-group">
               <label for="">Product needed <span>*</span></label>
               <div>
-                <textarea name="" rows="8" class="jsProjectTarget"></textarea>
+                <textarea
+                  name=""
+                  rows="8"
+                  class="jsProjectTarget"
+                  required
+                ></textarea>
               </div>
             </div>
           </div>
@@ -253,35 +281,44 @@
             <div>
               <button class="jsSubmitBtn">Submit</button>
             </div>
-            <div style="display: flex;justify-content: end;align-items: flex-end;">
-                <a href="img/MCSI PRODUCTS WITH PROJECTS_2023_0922_Vertical.pdf" download>Donwload Company Profile</a>
+            <div
+              style="display: flex; justify-content: end; align-items: flex-end"
+            >
+              <a
+                href="img/MCSI PRODUCTS WITH PROJECTS_2023_0922_Vertical.pdf"
+                download
+                >Donwload Company Profile</a
+              >
             </div>
           </div>
         </div>
       </div>
-      <div class="form-container" style="border: 1px solid black; overflow: hidden;">
+      <div
+        class="form-container"
+        style="border: 1px solid black; overflow: hidden"
+      >
         <div class="slider-container">
-        <div class="slider">
+          <div class="slider">
             <div class="slide">
-              <img src="img/Construction & Joint Sealant.png" alt="">
+              <img src="img/Construction & Joint Sealant.png" alt="" />
             </div>
             <div class="slide">
-              <img src="img/Fire Stop Solutions INCA.png" alt="">
+              <img src="img/Fire Stop Solutions INCA.png" alt="" />
             </div>
             <div class="slide">
-              <img src="img/General Glazing Nurichem.png" alt="">
+              <img src="img/General Glazing Nurichem.png" alt="" />
             </div>
             <div class="slide">
-              <img src="img/Structural Silicon Glazing Tremco.png" alt="">
+              <img src="img/Structural Silicon Glazing Tremco.png" alt="" />
             </div>
             <div class="slide">
-              <img src="img/Water Proofing Alchimica.png" alt="">
+              <img src="img/Water Proofing Alchimica.png" alt="" />
             </div>
             <div class="slide">
-              <img src="img/MCSI.png" alt="">
+              <img src="img/MCSI.png" alt="" />
             </div>
+          </div>
         </div>
-    </div>
       </div>
     </div>
     <footer>
@@ -320,100 +357,128 @@
 
       // Get a reference to the database
       const database = getDatabase(app);
+
       document.querySelector(".jsSubmitBtn").addEventListener("click", () => {
-        const currentDate = new Date();
+        if (validateForm(document.querySelector(".jsForm"))) {
+          const currentDate = new Date();
 
-        const year = currentDate.getFullYear();
-        const month = currentDate.getMonth() + 1; // Note: Months are zero-based, so we add 1 to get the correct month.
-        const day = currentDate.getDate();
-        const today = `${year}-${month}-${day}`;
+          const year = currentDate.getFullYear();
+          const month = currentDate.getMonth() + 1; // Note: Months are zero-based, so we add 1 to get the correct month.
+          const day = currentDate.getDate();
+          const today = `${year}-${month}-${day}`;
 
-        // Reference to a specific location in the database
-        const dataRef = ref(database, today); // Replace 'your-data-path' with the actual path in your database
+          // Reference to a specific location in the database
+          const dataRef = ref(database, today); // Replace 'your-data-path' with the actual path in your database
 
-        const fullname = document.querySelector(".jsFullname");
-        const position = document.querySelector(".jsPosition");
-        const companyName = document.querySelector(".jsCompany");
-        const companyClassification = document.querySelector(".jsCompanyClassification");
-        const contactNumber = document.querySelector(".jsContactNumber");
-        const email = document.querySelector(".jsEmail");
-        const projectTarget = document.querySelector(".jsProjectTarget");
-        // Data to be saved
-        const newData = {
-          _1Fullname: fullname.value,
-          _2Position: position.value,
-          _3CompanyName: companyName.value,
-          _4ClassificationOfCompany: companyClassification.value,
-          _5ContactNumber: contactNumber.value,
-          _5Email: email.value,
-          _6ProjectTarget: projectTarget.value,
-        };
+          const fullname = document.querySelector(".jsFullname");
+          const position = document.querySelector(".jsPosition");
+          const companyName = document.querySelector(".jsCompany");
+          const companyClassification = document.querySelector(
+            ".jsCompanyClassification"
+          );
+          const contactNumber = document.querySelector(".jsContactNumber");
+          const email = document.querySelector(".jsEmail");
+          const projectTarget = document.querySelector(".jsProjectTarget");
+          // Data to be saved
+          const newData = {
+            _1Fullname: fullname.value,
+            _2Position: position.value,
+            _3CompanyName: companyName.value,
+            _4ClassificationOfCompany: companyClassification.value,
+            _5ContactNumber: contactNumber.value,
+            _5Email: email.value,
+            _6ProjectTarget: projectTarget.value,
+          };
 
-        let view = `<div class="loader-container">
+          let view = `<div class="loader-container">
                         <div class="loader"></div>
                     </div>`;
-        let domparse = new DOMParser().parseFromString(view, 'text/html').querySelector('.loader-container');
-        document.body.append(domparse);
-    
-        
-        // Push the data to the database
-        push(dataRef, newData)
-          .then(() => {
-            console.log("Data saved successfully.");
-            document.querySelector('.loader-container').remove();
+          let domparse = new DOMParser()
+            .parseFromString(view, "text/html")
+            .querySelector(".loader-container");
+          document.body.append(domparse);
 
-            let alert = `<div class="alert" id="alert">Message Sent!</div>`
-            let domparseAlert = new DOMParser().parseFromString(alert, 'text/html').querySelector('#alert');
-            document.body.append(domparseAlert);
+          // Push the data to the database
+          push(dataRef, newData)
+            .then(() => {
+              console.log("Data saved successfully.");
+              document.querySelector(".loader-container").remove();
 
-            setTimeout(() => {
-              document.querySelector('#alert').remove();
-            }, 3000); // 3000 milliseconds = 3 seconds
+              let alert = `<div class="alert" id="alert">Message Sent!</div>`;
+              let domparseAlert = new DOMParser()
+                .parseFromString(alert, "text/html")
+                .querySelector("#alert");
+              document.body.append(domparseAlert);
 
-          })
-          .catch((error) => {
-            console.error("Error saving data: ", error);
-            
-            ocument.querySelector('.loader-container').remove();
-            setTimeout(() => {
-              document.querySelector('#alert').remove();
-            }, 3000); // 3000 milliseconds = 3 seconds
-          });
+              setTimeout(() => {
+                document.querySelector("#alert").remove();
+              }, 3000);
+
+              setTimeout(() => {
+                location.reload();
+              }, 3000);
+            })
+            .catch((error) => {
+              let alert = `<div class="alert-error" id="alert"></div>`;
+              let domparseAlert = new DOMParser()
+                .parseFromString(alert, "text/html")
+                .querySelector("#alert");
+              domparseAlert.querySelector("#alert").textContent = error;
+              document.body.append(domparseAlert);
+              console.error("Error saving data: ", error);
+
+              setTimeout(() => {
+                document.querySelector(".loader-container").remove();
+              }, 3000);
+
+              setTimeout(() => {
+                location.reload();
+              }, 3000);
+            });
+        }
       });
 
-      // function validateForm(input) {
+      function validateForm(parentEl) {
+        let errors = 0;
 
-      //   let errors = 0;
+        parentEl
+          .querySelectorAll(
+            "input[required],select[required],textarea[required]"
+          )
+          .forEach((item) => {
+            if (item.value) {
+              item.removeAttribute("style");
+            } else {
+              errors += 1;
 
-      //   if (input.classList.contains('input-select')) {
-      //       if (input.getAttribute('data-id') > 0) {
-      //           input.closest('.jsSelectInputCont').removeAttribute('style');
-      //       }
-      //       else {
-      //           errors += 1;
-      //           input.closest('.jsSelectInputCont').setAttribute('style', 'border: 1px solid red');
-      //       }
-      //   }
-      //   else {
-      //       if (input.value) {
-      //           input.removeAttribute('style');
+              item.setAttribute("style", "border: 1px solid red");
+            }
+          });
 
-      //       }
-      //       else {
-      //           errors += 1;
-      //           input.setAttribute('style', 'border: 1px solid red');
-      //       }
-      //   }
-
-      //   return errors == 0 ? true : false;
-      //   }
-
-    
+        return errors == 0 ? true : false;
+      }
     </script>
 
     <script>
       const currentYear = new Date().getFullYear();
       document.getElementById("currentYear").textContent = currentYear;
+      let parentEl =  document.querySelector('header');
+      const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+      handleMediaQueryChange(mediaQuery);
+
+      mediaQuery.addListener(handleMediaQueryChange);
+      function handleMediaQueryChange(event) {
+        if (event.matches) {
+          console.log("Media query matches: viewport is less than 768px");
+          parentEl.innerHTML = `<img src="img/mcsi.jpg" alt="" style="height: 100%; width: 100%" />`
+       
+        } else {
+          parentEl.innerHTML = `<img src="img/msci.png" alt="" style="height: 100%; width: 100%" />`
+
+
+        }
+      }
     </script>
   </body>
 </html>
