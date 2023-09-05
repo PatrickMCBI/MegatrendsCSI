@@ -69,16 +69,18 @@
         overflow: hidden;
         width: 100%; /* Adjust the width as needed */
         height: 100%; /* Adjust the height as needed */
+        display: grid;
+        align-items: center;
       }
 
       .slider {
         display: flex;
-        width: 1200px; /* Total width of all slides (300px * 3 slides) */
+        width: 1300px; /* Total width of all slides (300px * 3 slides) */
         animation: slide 15s linear infinite; /* Adjust the animation duration */
       }
 
       .slide {
-        flex: 0 0 200px; /* Set the width of individual slides */
+        flex: 0 0 0 250px; /* Set the width of individual slides */
         height: 100%; /* Set the height of individual slides */
         /* background-color: #3498db; Set the background color */
         margin-right: 10px; /* Adjust the margin between slides */
@@ -185,8 +187,7 @@
     </style>
   </head>
   <body>
-    <header>
-    </header>
+    <header></header>
     <div class="grid-container">
       <div class="form-container jsForm">
         <div style="margin-top: 25px">
@@ -300,22 +301,22 @@
         <div class="slider-container">
           <div class="slider">
             <div class="slide">
-              <img src="img/Construction & Joint Sealant.png" alt="" loading="lazy"/>
+              <img src="img/1.jpg" alt="" loading="lazy" />
             </div>
             <div class="slide">
-              <img src="img/Fire Stop Solutions INCA.png" alt="" loading="lazy"/>
+              <img src="img/2.jpg" alt="" loading="lazy" />
             </div>
             <div class="slide">
-              <img src="img/General Glazing Nurichem.png" alt="" loading="lazy"/>
+              <img src="img/3.jpg" alt="" loading="lazy" />
             </div>
             <div class="slide">
-              <img src="img/Structural Silicon Glazing Tremco.png" alt="" loading="lazy"/>
+              <img src="img/4.jpg" alt="" loading="lazy" />
             </div>
             <div class="slide">
-              <img src="img/Water Proofing Alchimica.png" alt="" loading="lazy"/>
+              <img src="img/5.jpg" alt="" loading="lazy" />
             </div>
             <div class="slide">
-              <img src="img/MCSI.png" alt="" loading="lazy"/>
+              <img src="img/6.jpg" alt="" loading="lazy" />
             </div>
           </div>
         </div>
@@ -462,7 +463,7 @@
     <script>
       const currentYear = new Date().getFullYear();
       document.getElementById("currentYear").textContent = currentYear;
-      let parentEl =  document.querySelector('header');
+      let parentEl = document.querySelector("header");
       const mediaQuery = window.matchMedia("(max-width: 768px)");
 
       handleMediaQueryChange(mediaQuery);
@@ -471,12 +472,9 @@
       function handleMediaQueryChange(event) {
         if (event.matches) {
           console.log("Media query matches: viewport is less than 768px");
-          parentEl.innerHTML = `<img src="img/mcsi.jpg" alt="" style="height: 100%; width: 100%" loading="lazy"/>`
-       
+          parentEl.innerHTML = `<img src="img/mcsi.jpg" alt="" style="height: 100%; width: 100%" loading="lazy"/>`;
         } else {
-          parentEl.innerHTML = `<img src="img/msci.png" alt="" style="height: 100%; width: 100%" loading="lazy"/>`
-
-
+          parentEl.innerHTML = `<img src="img/MSCI_header.jpg" alt="" style="height: 100%; width: 100%" loading="lazy"/>`;
         }
       }
     </script>
