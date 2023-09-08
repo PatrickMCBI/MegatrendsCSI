@@ -432,12 +432,15 @@
                 .querySelector("#alert");
               document.body.append(domparseAlert);
 
+
+
               setTimeout(() => {
                 document.querySelector("#alert").remove();
+                
               }, 3000);
 
               setTimeout(() => {
-                location.reload();
+                openNewWindow();
               }, 3000);
             })
             .catch((error) => {
@@ -479,6 +482,22 @@
 
         return errors == 0 ? true : false;
       }
+
+
+      function openNewWindow() {
+    // URL to open in the new window
+    const urlToOpen = 'https://www.facebook.com/profile.php?id=100078462361879';
+
+    // Open a new window or tab
+    const newWindow = window.open(urlToOpen, '_blank');
+    
+    // Ensure the popup wasn't blocked
+    if (newWindow) {
+        newWindow.focus(); // Focus on the new window
+    } else {
+        alert('The popup was blocked. Please allow pop-ups for this site.'); // Display a message if the popup was blocked
+    }
+}
     </script>
 
     <script>
@@ -529,6 +548,8 @@
           parentEl.innerHTML = `<img src="img/MSCI_header.jpg" alt="" style="height: 100%; width: 100%" loading="lazy"/>`;
         }
       }
+
+     
     </script>
   </body>
 </html>
